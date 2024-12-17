@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_site/Screens/Search/SearchPage.dart';
 
 class HomePage extends StatelessWidget {
   @override
@@ -37,6 +38,12 @@ class HomePage extends StatelessWidget {
         unselectedItemColor: Colors.blueGrey,
         currentIndex: 0,
         showUnselectedLabels: true,
+        onTap: (index) {
+          if (index == 1) {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => SearchPage()));
+          }
+        },
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
