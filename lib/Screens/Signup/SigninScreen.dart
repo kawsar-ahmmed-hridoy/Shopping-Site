@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_site/Screens/Home/HomePage.dart';
 import 'SignupScreen.dart';
 
 class SigninScreen extends StatelessWidget {
@@ -20,7 +21,7 @@ class SigninScreen extends StatelessWidget {
             SizedBox(
               width: 120,
               child: ElevatedButton(
-                onPressed: () {/*pore kora lagbe*/},
+                onPressed: () {Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()),);},
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.blue, padding: EdgeInsets.symmetric(vertical: 16), shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10),),),
                 child: Text("Sign In", style: TextStyle(fontSize: 18, color: Colors.white,),),
               ),
