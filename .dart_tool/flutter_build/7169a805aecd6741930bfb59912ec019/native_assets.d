@@ -1,0 +1,1 @@
+ D:\\shoppingSite\\.dart_tool\\flutter_build\\7169a805aecd6741930bfb59912ec019\\native_assets.yaml: 

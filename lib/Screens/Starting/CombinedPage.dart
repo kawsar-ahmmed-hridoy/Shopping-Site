@@ -5,15 +5,6 @@ import 'Page3.dart';
 
 class Combinedpage extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: PageView(
-        children: [
-          Page1(),
-          Page2(),
-          Page3(),
-        ],
-      ),
-    );
+  Widget build(BuildContext context) {return Scaffold(body: PageView(children: [Page1(), Page2(), Page3(),],),);
   }
 }
