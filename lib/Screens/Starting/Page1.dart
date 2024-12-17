@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_site/Screens/Signup/SigninScreen.dart';
 import 'package:shopping_site/Screens/Starting/Page2.dart';
-import '../Signup/SigninScreen.dart';
 
 class Page1 extends StatelessWidget {
   @override
