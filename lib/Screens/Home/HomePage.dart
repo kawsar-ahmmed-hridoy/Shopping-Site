@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_site/Screens/Cart/CartPage.dart';
 import 'package:shopping_site/Screens/Search/SearchPage.dart';
 
 class HomePage extends StatelessWidget {
@@ -42,6 +43,10 @@ class HomePage extends StatelessWidget {
           if (index == 1) {
             Navigator.push(
                 context, MaterialPageRoute(builder: (context) => SearchPage()));
+          }
+          if (index == 2) {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => CartPage()));
           }
         },
         items: [
