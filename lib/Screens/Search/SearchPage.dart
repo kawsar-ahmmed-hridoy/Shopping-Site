@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shopping_site/Screens/Cart/CartPage.dart';
 import 'package:shopping_site/Screens/Favorite/SaveItemPage.dart';
 import 'package:shopping_site/Screens/Home/HomePage.dart';
+import 'package:shopping_site/Screens/Profile/ProfilePage.dart';
 import 'package:shopping_site/Screens/Search/RecentSearchPage.dart';
 
 class SearchPage extends StatelessWidget {
@@ -18,17 +19,15 @@ class SearchPage extends StatelessWidget {
         showUnselectedLabels: true,
         onTap: (index) {
           if (index == 0) {
-             Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()),);
+            Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+          } if (index == 4) {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage()));
+          } if (index == 2) {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => CartPage()));
+          } if (index == 3) {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => SaveItemPage()));
           }
-          if (index == 2) {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => CartPage()));
-          }
-          if (index == 3) {
-            Navigator.push(
-              context, MaterialPageRoute(builder: (context) => SaveItemPage()),);
-          }
-          },
+        },
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
           BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),

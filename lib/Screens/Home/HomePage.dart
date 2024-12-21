@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_site/Screens/Cart/CartPage.dart';
 import 'package:shopping_site/Screens/Favorite/SaveItemPage.dart';
+import 'package:shopping_site/Screens/Profile/ProfilePage.dart';
 import 'package:shopping_site/Screens/Search/SearchPage.dart';
 
 class HomePage extends StatelessWidget {
@@ -41,17 +42,14 @@ class HomePage extends StatelessWidget {
         currentIndex: 0,
         showUnselectedLabels: true,
         onTap: (index) {
-          if (index == 1) {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => SearchPage()));
-          }
-          if (index == 2) {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => CartPage()));
-          }
-          if (index == 3) {
-            Navigator.push(
-              context, MaterialPageRoute(builder: (context) => SaveItemPage()),);
+          if (index == 4) {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage()));
+          } if (index == 1) {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => SearchPage()));
+          } if (index == 2) {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => CartPage()));
+          } if (index == 3) {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => SaveItemPage()));
           }
         },
         items: [

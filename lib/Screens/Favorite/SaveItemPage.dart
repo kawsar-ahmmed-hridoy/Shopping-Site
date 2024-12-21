@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_site/Screens/Cart/CartPage.dart';
 import 'package:shopping_site/Screens/Home/HomePage.dart';
+import 'package:shopping_site/Screens/Profile/ProfilePage.dart';
 import 'package:shopping_site/Screens/Search/SearchPage.dart';
 
 class SaveItemPage extends StatefulWidget {
@@ -54,20 +55,13 @@ class _SaveItemPageState extends State<SaveItemPage> {
         showUnselectedLabels: true,
         onTap: (index) {
           if (index == 0) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => HomePage()),
-            );
-          }
-          if (index == 1) {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => SearchPage()));
-          }
-          if (index == 2) {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => CartPage()),
-            );
+            Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+          } if (index == 1) {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => SearchPage()));
+          } if (index == 2) {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => CartPage()));
+          } if (index == 4) {
+            Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage()));
           }
         },
         items: [
@@ -86,7 +80,7 @@ class _SaveItemPageState extends State<SaveItemPage> {
       padding: EdgeInsets.all(10),
       children: [
         _buildSavedItemCard("Handbag LV", "\$225", "assets/products/handbag.png"),
-        _buildSavedItemCard("Panjabi", "\$86", "assets/products/panjabi.png", color: Colors.blue, size: "XL"),
+        _buildSavedItemCard("Panjabi", "\$86", "assets/products/panjabi.png", color: Colors.green, size: "XL"),
         _buildSavedItemCard("T-shirt", "\$36", "assets/products/tshirt.png", color: Colors.grey, size: "M"),
       ],
     );
