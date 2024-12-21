@@ -3,19 +3,19 @@ import 'package:flutter/material.dart';
 class OrdersPage extends StatelessWidget {
   final List<Map<String, dynamic>> pendingOrders = [
     {
-      'title': 'Women\'s Hoodie',
-      'price': 123,
-      'status': 'Pending',
-      'orderDate': 'June 6, 2020',
+      "title": "Women\'s Hoodie",
+      "price": 123,
+      "status": "Pending",
+      "orderDate": "Nov 16, 2024",
     },
   ];
 
   final List<Map<String, dynamic>> pastOrders = [
     {
-      'title': 'Jeans',
-      'price': 215,
-      'status': 'Delivered',
-      'orderDate': 'June 2, 2020',
+      "title": "Jeans",
+      "price": 215,
+      "status": "Delivered",
+      "orderDate": "Nov 20, 2024",
     },
   ];
 
@@ -25,12 +25,12 @@ class OrdersPage extends StatelessWidget {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('My Orders'),
+          title: Text("My Orders"),
           backgroundColor: Colors.brown,
           bottom: TabBar(
             tabs: [
-              Tab(text: 'Pending Orders'),
-              Tab(text: 'Past Orders'),
+              Tab(text: "Pending Orders"),
+              Tab(text: "Past Orders"),
             ],
           ),
         ),
@@ -47,7 +47,7 @@ class OrdersPage extends StatelessWidget {
   Widget _ordersList(List<Map<String, dynamic>> orders, BuildContext context) {
     if (orders.isEmpty) {
       return Center(
-        child: Text('No orders available', style: TextStyle(fontSize: 18)),
+        child: Text("No orders available", style: TextStyle(fontSize: 18)),
       );
     }
     return ListView.builder(
@@ -57,13 +57,13 @@ class OrdersPage extends StatelessWidget {
         return Card(
           margin: EdgeInsets.all(8.0),
           child: ListTile(
-            title: Text(order['title'], style: TextStyle(fontWeight: FontWeight.bold)),
+            title: Text(order["title"], style: TextStyle(fontWeight: FontWeight.bold)),
             subtitle: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Price: \$${order['price']}'),
-                Text('Status: ${order['status']}'),
-                Text('Order Date: ${order['orderDate']}'),
+                Text("Price: \$${order["price"]}"),
+                Text("Status: ${order["status"]}"),
+                Text("Order Date: ${order["orderDate"]}"),
               ],
             ),
             trailing: Icon(Icons.arrow_forward_ios, size: 16),

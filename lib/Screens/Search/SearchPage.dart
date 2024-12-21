@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_site/Screens/Cart/CartPage.dart';
+import 'package:shopping_site/Screens/Favorite/SaveItemPage.dart';
 import 'package:shopping_site/Screens/Home/HomePage.dart';
 import 'package:shopping_site/Screens/Search/RecentSearchPage.dart';
 
@@ -22,6 +23,10 @@ class SearchPage extends StatelessWidget {
           if (index == 2) {
             Navigator.push(
                 context, MaterialPageRoute(builder: (context) => CartPage()));
+          }
+          if (index == 3) {
+            Navigator.push(
+              context, MaterialPageRoute(builder: (context) => SaveItemPage()),);
           }
           },
         items: [

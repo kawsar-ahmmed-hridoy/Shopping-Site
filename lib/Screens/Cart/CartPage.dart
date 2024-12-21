@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_site/Screens/Cart/CheckoutPage.dart';
 import 'package:shopping_site/Screens/Cart/OrdersPage.dart';
+import 'package:shopping_site/Screens/Favorite/SaveItemPage.dart';
 import 'package:shopping_site/Screens/Home/HomePage.dart';
 import 'package:shopping_site/Screens/Search/SearchPage.dart';
 
@@ -133,16 +134,20 @@ class _CartPageState extends State<CartPage> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: 2,
-        selectedItemColor: Colors.brown,
+        selectedItemColor: Colors.cyanAccent,
         unselectedItemColor: Colors.grey,
         onTap: (index) {
+          if (index == 0) {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => HomePage()));
+          }
           if (index == 1) {
             Navigator.push(
                 context, MaterialPageRoute(builder: (context) => SearchPage()));
           }
-          if (index == 0) {
+          if (index == 3) {
             Navigator.push(
-                context, MaterialPageRoute(builder: (context) => HomePage()));
+              context, MaterialPageRoute(builder: (context) => SaveItemPage()),);
           }
         },
         items: [
