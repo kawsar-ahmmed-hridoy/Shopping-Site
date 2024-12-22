@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shopping_site/Screens/Cart/CartPage.dart';
 import 'package:shopping_site/Screens/Favorite/SaveItemPage.dart';
+import 'package:shopping_site/Screens/Home/NewTrendPage.dart';
 import 'package:shopping_site/Screens/Profile/ProfilePage.dart';
 import 'package:shopping_site/Screens/Search/SearchPage.dart';
 
@@ -13,10 +14,10 @@ class HomePage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(children: [Expanded(child:  _fullCard("NEW TREND", "assets/products/scarts.png",),),],),
+            Row(children: [Expanded(child:  _fullCard("NEW TREND", "assets/products/scarts.png",context),),],),
             Row(children: [Expanded(child: _recentlyViewedCard("T-shirt", "\$123", "assets/products/tshirt.png",),), Expanded(child: _recentlyViewedCard("Handbag LV", "\$225", "assets/products/handbag.png",),),],),
             Row(children: [Expanded(child: _recentlyViewedCard("Skirt", "\$150", "assets/products/skirt.png",),), Expanded(child: _recentlyViewedCard("Face Coverings", "\$12", "assets/products/faceover.png",),),],),
-            Row(children: [Expanded(child:  _fullCard("POPULAR", "assets/products/hridoy.png",),),],),
+            Row(children: [Expanded(child:  _fullCard("POPULAR", "assets/products/hridoy.png",context),),],),
 
             Padding(padding: const EdgeInsets.all(12.0), child: Text("Recently Viewed", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),),
             Row(children: [Expanded(child: _recentlyViewedCard("Shoes", "\$56", "assets/products/shoes.png",),), Expanded(child: _recentlyViewedCard("T-shirt", "\$123", "assets/products/tshirt.png",),),],),
@@ -79,17 +80,21 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _fullCard(String title, String imagePath) {
-    return Container(
-      margin: EdgeInsets.only(top: 10),
-      child: Stack(clipBehavior: Clip.none,
-        children: [
-          Card(elevation: 4, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-            child: Container(height: 150, padding: EdgeInsets.all(16), child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, crossAxisAlignment: CrossAxisAlignment.center, children: [Text(title, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),), SizedBox(width: 50),],),
+  Widget _fullCard(String title, String imagePath, BuildContext context) {
+    return GestureDetector(
+      onTap: () {if (title == "NEW TREND") {Navigator.push(context, MaterialPageRoute(builder: (context) => NewTrendPage()),);}},
+      child: Container(
+        margin: EdgeInsets.only(top: 10),
+        child: Stack(
+          clipBehavior: Clip.none,
+          children: [
+            Card(elevation: 4, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12),), child: Container(height: 150, padding: EdgeInsets.all(16),
+              child: Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly, crossAxisAlignment: CrossAxisAlignment.center, children: [Text(title, style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),), SizedBox(width: 50),],),
             ),
-          ),
-          Positioned(right: 20, top: -20, bottom: 0, child: Image.asset(imagePath, height: 160, width: 220,),),
-        ],
+            ),
+            Positioned(right: 20, top: -20, bottom: 0, child: Image.asset(imagePath, height: 160, width: 220,),),
+          ],
+        ),
       ),
     );
   }
