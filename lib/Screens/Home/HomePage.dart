@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:shopping_site/Screens/Cart/CartPage.dart';
 import 'package:shopping_site/Screens/Favorite/SaveItemPage.dart';
 import 'package:shopping_site/Screens/Home/NewTrendPage.dart';
+import 'package:shopping_site/Screens/Home/ProductDetailsPage.dart';
 import 'package:shopping_site/Screens/Profile/ProfilePage.dart';
 import 'package:shopping_site/Screens/Search/SearchPage.dart';
 
@@ -15,15 +16,15 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Row(children: [Expanded(child:  _fullCard("NEW TREND", "assets/products/scarts.png",context),),],),
-            Row(children: [Expanded(child: _recentlyViewedCard("T-shirt", "\$123", "assets/products/tshirt.png",),), Expanded(child: _recentlyViewedCard("Handbag LV", "\$225", "assets/products/handbag.png",),),],),
-            Row(children: [Expanded(child: _recentlyViewedCard("Skirt", "\$150", "assets/products/skirt.png",),), Expanded(child: _recentlyViewedCard("Face Coverings", "\$12", "assets/products/faceover.png",),),],),
+            Row(children: [Expanded(child: _recentlyViewedCard("T-shirt", "\$123", "assets/products/tshirt.png",context),), Expanded(child: _recentlyViewedCard("Handbag LV", "\$225", "assets/products/handbag.png",context),),],),
+            Row(children: [Expanded(child: _recentlyViewedCard("Skirt", "\$150", "assets/products/skirt.png",context),), Expanded(child: _recentlyViewedCard("Face Coverings", "\$12", "assets/products/faceover.png",context),),],),
             Row(children: [Expanded(child:  _fullCard("POPULAR", "assets/products/hridoy.png",context),),],),
 
             Padding(padding: const EdgeInsets.all(12.0), child: Text("Recently Viewed", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),),
-            Row(children: [Expanded(child: _recentlyViewedCard("Shoes", "\$56", "assets/products/shoes.png",),), Expanded(child: _recentlyViewedCard("T-shirt", "\$123", "assets/products/tshirt.png",),),],),
+            Row(children: [Expanded(child: _recentlyViewedCard("Shoes", "\$56", "assets/products/shoes.png", context),), Expanded(child: _recentlyViewedCard("T-shirt", "\$123", "assets/products/tshirt.png", context),),],),
             const SizedBox(height: 10),
 
-            Padding(padding: const EdgeInsets.symmetric(horizontal: 12.0), child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [Text("Saved items", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),), TextButton(onPressed: () {/*pore edit kora lagbe*/}, child: Text("See all", style: TextStyle(color: Colors.brown, fontSize: 14, fontWeight: FontWeight.bold,),),),],),),
+            Padding(padding: const EdgeInsets.symmetric(horizontal: 12.0), child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [Text("Saved items", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),), TextButton(onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => SaveItemPage()));}, child: Text("See all", style: TextStyle(color: Colors.brown, fontSize: 14, fontWeight: FontWeight.bold,),),),],),),
             _savedItemCard("Handbag LV", "\$225", "assets/products/handbag.png"),
             _savedItemCard("T-shirt", "\$123", "assets/products/tshirt.png"),
             const SizedBox(height: 10),
@@ -72,13 +73,14 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget _recentlyViewedCard(String title, String price, String imagePath) {
-    return Card(
-      margin: EdgeInsets.all(8.0),
-      child: Column(children: [Image.asset(imagePath, height: 100, fit: BoxFit.contain), Padding(padding: const EdgeInsets.symmetric(vertical: 4.0), child: Text(title, style: TextStyle(fontWeight: FontWeight.bold),),), Text(price, style: TextStyle(color: Colors.black)),],
-      ),
+  Widget _recentlyViewedCard(String title, String price, String imagePath, BuildContext context) {
+    return GestureDetector(
+      onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => ProductDetailsPage(title: title, price: price, imagePath: imagePath,),),);},
+      child: Card(color: Color(0xFFD8C4B6), margin: EdgeInsets.all(8.0),
+        child: Column(children: [Image.asset(imagePath, height: 100, fit: BoxFit.contain), Padding(padding: const EdgeInsets.symmetric(vertical: 4.0), child: Text(title, style: TextStyle(fontWeight: FontWeight.bold)),), Text(price, style: TextStyle(color: Colors.black)),],),),
     );
   }
+
 
   Widget _fullCard(String title, String imagePath, BuildContext context) {
     return GestureDetector(
