@@ -15,14 +15,15 @@ class _SaveItemPageState extends State<SaveItemPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFC9E6F0),
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Color(0xFF213555),
         elevation: 1,
         leading: IconButton(icon: Icon(Icons.arrow_back, color: Colors.black), onPressed: () => Navigator.pop(context),),
-        title: Text("Saved Items", style: TextStyle(color: Colors.black),),
+        title: Text("Saved Items", style: TextStyle(color: Colors.cyanAccent),),
         actions: [
           IconButton(
-            icon: Icon(Icons.shopping_cart, color: Colors.black),
+            icon: Icon(Icons.shopping_cart, color: Colors.white),
             onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => CartPage()),);},
           ),
         ],
@@ -35,12 +36,12 @@ class _SaveItemPageState extends State<SaveItemPage> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 TextButton(onPressed: () {setState(() {isAllItemsSelected = true;});},
-                  child: Text("All Items", style: TextStyle(color: isAllItemsSelected ? Colors.brown : Colors.grey, fontWeight: FontWeight.bold,),),
+                  child: Text("All Items", style: TextStyle(color: isAllItemsSelected ? Colors.blue : Colors.grey, fontWeight: FontWeight.bold,),),
                 ),
                 TextButton(
                   onPressed: () {setState(() {isAllItemsSelected = false;});
                   },
-                  child: Text("Boards", style: TextStyle(color: !isAllItemsSelected ? Colors.brown : Colors.grey, fontWeight: FontWeight.bold,),),
+                  child: Text("Boards", style: TextStyle(color: !isAllItemsSelected ? Colors.blue : Colors.grey, fontWeight: FontWeight.bold,),),
                 ),
               ],
             ),
@@ -65,11 +66,11 @@ class _SaveItemPageState extends State<SaveItemPage> {
           }
         },
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
-          BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: "Cart"),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: "Saved"),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+          BottomNavigationBarItem(backgroundColor: Color(0xFF213555), icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(backgroundColor: Color(0xFF213555), icon: Icon(Icons.search), label: "Search"),
+          BottomNavigationBarItem(backgroundColor: Color(0xFF213555), icon: Icon(Icons.shopping_cart), label: "Cart"),
+          BottomNavigationBarItem(backgroundColor: Color(0xFF213555), icon: Icon(Icons.favorite), label: "Saved"),
+          BottomNavigationBarItem(backgroundColor: Color(0xFF213555), icon: Icon(Icons.person), label: "Profile"),
         ],
       ),
     );
@@ -82,6 +83,10 @@ class _SaveItemPageState extends State<SaveItemPage> {
         _buildSavedItemCard("Handbag LV", "\$225", "assets/products/handbag.png"),
         _buildSavedItemCard("Panjabi", "\$86", "assets/products/panjabi.png", color: Colors.green, size: "XL"),
         _buildSavedItemCard("T-shirt", "\$36", "assets/products/tshirt.png", color: Colors.grey, size: "M"),
+        _buildSavedItemCard("Wallet", "\$22", "assets/products/wallet.png"),
+        _buildSavedItemCard("Shirt", "\$40", "assets/products/hridoy.png", color: Colors.white, size: "M"),
+        _buildSavedItemCard("Shoes", "\$180", "assets/products/shoes.png", color: Colors.brown, size: "XL"),
+        _buildSavedItemCard("Faceover", "\$225", "assets/products/faceover.png"),
       ],
     );
   }
@@ -111,7 +116,7 @@ class _SaveItemPageState extends State<SaveItemPage> {
   Widget _buildSavedItemCard(String title, String price, String imagePath,
       {Color? color, String? size}) {
     return Card(
-      margin: EdgeInsets.symmetric(vertical: 8),
+      margin: EdgeInsets.symmetric(vertical: 4),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       child: Padding(
         padding: EdgeInsets.all(8.0),
@@ -138,7 +143,7 @@ class _SaveItemPageState extends State<SaveItemPage> {
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
                 Text(price, style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: Colors.black,),),
-                IconButton(icon: Icon(Icons.shopping_cart_outlined), onPressed: () {/*pore kora lagbe*/},),
+                IconButton(icon: Icon(Icons.shopping_cart_outlined,color: Colors.deepOrange,), onPressed: () {/*pore kora lagbe*/},),
               ],
             ),
           ],
