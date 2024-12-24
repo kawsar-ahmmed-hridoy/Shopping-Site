@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color(0xFFC9E6F0),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
             Row(children: [Expanded(child: _recentlyViewedCard("Shoes", "\$56", "assets/products/shoes.png", context),), Expanded(child: _recentlyViewedCard("T-shirt", "\$123", "assets/products/tshirt.png", context),),],),
             const SizedBox(height: 10),
 
-            Padding(padding: const EdgeInsets.symmetric(horizontal: 12.0), child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [Text("Saved items", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),), TextButton(onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => SaveItemPage()));}, child: Text("See all", style: TextStyle(color: Colors.brown, fontSize: 14, fontWeight: FontWeight.bold,),),),],),),
+            Padding(padding: const EdgeInsets.symmetric(horizontal: 12.0), child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [Text("Saved items", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),), TextButton(onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => SaveItemPage()));}, child: Text("See all", style: TextStyle(color: Colors.blue, fontSize: 14, fontWeight: FontWeight.bold,),),),],),),
             _savedItemCard("Handbag LV", "\$225", "assets/products/handbag.png"),
             _savedItemCard("T-shirt", "\$123", "assets/products/tshirt.png"),
             const SizedBox(height: 10),
@@ -55,11 +55,11 @@ class HomePage extends StatelessWidget {
           }
         },
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
-          BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: "Cart"),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: "Saved"),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+          BottomNavigationBarItem(backgroundColor: Color(0xFF213555), icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(backgroundColor: Color(0xFF213555), icon: Icon(Icons.search), label: "Search"),
+          BottomNavigationBarItem(backgroundColor: Color(0xFF213555), icon: Icon(Icons.shopping_cart), label: "Cart"),
+          BottomNavigationBarItem(backgroundColor: Color(0xFF213555), icon: Icon(Icons.favorite), label: "Saved"),
+          BottomNavigationBarItem(backgroundColor: Color(0xFF213555), icon: Icon(Icons.person), label: "Profile"),
         ],
       ),
     );
@@ -76,7 +76,7 @@ class HomePage extends StatelessWidget {
   Widget _recentlyViewedCard(String title, String price, String imagePath, BuildContext context) {
     return GestureDetector(
       onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context) => ProductDetailsPage(title: title, price: price, imagePath: imagePath,),),);},
-      child: Card(color: Color(0xFFD8C4B6), margin: EdgeInsets.all(8.0),
+      child: Card(margin: EdgeInsets.all(8.0),
         child: Column(children: [Image.asset(imagePath, height: 100, fit: BoxFit.contain), Padding(padding: const EdgeInsets.symmetric(vertical: 4.0), child: Text(title, style: TextStyle(fontWeight: FontWeight.bold)),), Text(price, style: TextStyle(color: Colors.black)),],),),
     );
   }

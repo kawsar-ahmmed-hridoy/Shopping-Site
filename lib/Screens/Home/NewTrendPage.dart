@@ -23,8 +23,8 @@ class _NewTrendPageState extends State<NewTrendPage> {
 
   void sortProducts(String criteria) {
     setState(() {
-      if (criteria == "Price: L-->H") {filteredProducts.sort((a, b) => a['price'].compareTo(b['price']));
-      } else if (criteria == "Price: H-->L") {filteredProducts.sort((a, b) => b['price'].compareTo(a['price']));}
+      if (criteria == "Price: Low-->High") {filteredProducts.sort((a, b) => a["price"].compareTo(b["price"]));
+      } else if (criteria == "Price: High-->Low") {filteredProducts.sort((a, b) => b["price"].compareTo(a["price"]));}
     });
   }
 
@@ -39,7 +39,8 @@ class _NewTrendPageState extends State<NewTrendPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: Colors.white, title: Text("New Trend", style: TextStyle(color: Colors.black),),
+      backgroundColor: Color(0xFFC9E6F0),
+      appBar: AppBar(backgroundColor: Color(0xFF213555), title: Text("New Trend", style: TextStyle(color: Colors.cyanAccent),),
         iconTheme: IconThemeData(color: Colors.black),
         actions: [
           IconButton(icon: Icon(Icons.shopping_cart), onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => CartPage()));},),
@@ -47,7 +48,6 @@ class _NewTrendPageState extends State<NewTrendPage> {
       ),
       body: Column(
         children: [
-          // Sort and Filter Row
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
             child: Row(
@@ -60,8 +60,8 @@ class _NewTrendPageState extends State<NewTrendPage> {
                       builder: (context) {
                         return ListView(
                           children: [
-                            ListTile(title: Text("Price: L-->H"), onTap: () {sortProducts("Price: L-->H");Navigator.pop(context);},),
-                            ListTile(title: Text("Price: H-->L"), onTap: () {sortProducts("Price: H-->L");Navigator.pop(context);},),
+                            ListTile(title: Text("Price: Low-->High"), onTap: () {sortProducts("Price: Low-->High");Navigator.pop(context);},),
+                            ListTile(title: Text("Price: High-->Low"), onTap: () {sortProducts("Price: High-->Low");Navigator.pop(context);},),
                           ],
                         );
                       },
@@ -95,11 +95,10 @@ class _NewTrendPageState extends State<NewTrendPage> {
               ],
             ),
           ),
-          // Product Grid
           Expanded(
             child: GridView.builder(
               padding: const EdgeInsets.all(10.0),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, crossAxisSpacing: 10, mainAxisSpacing: 10, childAspectRatio: 0.6,),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, crossAxisSpacing: 10, mainAxisSpacing: 10, childAspectRatio: 1.5,),
               itemCount: filteredProducts.length,
               itemBuilder: (context, index) {
                 final product = filteredProducts[index];
@@ -108,7 +107,7 @@ class _NewTrendPageState extends State<NewTrendPage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Expanded(child: ClipRRect(borderRadius: BorderRadius.vertical(top: Radius.circular(8.0),), child: Image.asset(product["image"], fit: BoxFit.cover, width: double.infinity,),),),
+                      Expanded(child: ClipRRect(borderRadius: BorderRadius.vertical(top: Radius.circular(8.0),), child: Image.asset(product["image"], fit: BoxFit.contain, width: 100,),),),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Column(
