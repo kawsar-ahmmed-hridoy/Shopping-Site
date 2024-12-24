@@ -9,8 +9,8 @@ class SearchPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(automaticallyImplyLeading: false, title: _buildInteractiveSearchBar(context), backgroundColor: Colors.white, elevation: 0,),
+      backgroundColor: Color(0xFFC9E6F0),
+      appBar: AppBar(automaticallyImplyLeading: false, title: _buildInteractiveSearchBar(context), backgroundColor: Color(0xFF213555), elevation: 0,),
       body: _buildCategoryView(),
       bottomNavigationBar: BottomNavigationBar(
         selectedItemColor: Colors.cyanAccent,
@@ -29,11 +29,11 @@ class SearchPage extends StatelessWidget {
           }
         },
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
-          BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: "Cart"),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: "Saved"),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+          BottomNavigationBarItem(backgroundColor: Color(0xFF213555), icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(backgroundColor: Color(0xFF213555), icon: Icon(Icons.search), label: "Search"),
+          BottomNavigationBarItem(backgroundColor: Color(0xFF213555), icon: Icon(Icons.shopping_cart), label: "Cart"),
+          BottomNavigationBarItem(backgroundColor: Color(0xFF213555), icon: Icon(Icons.favorite), label: "Saved"),
+          BottomNavigationBarItem(backgroundColor: Color(0xFF213555), icon: Icon(Icons.person), label: "Profile"),
         ],
       ),
     );
@@ -49,7 +49,7 @@ class SearchPage extends StatelessWidget {
           splashColor: Colors.grey.shade200,
           hoverColor: Colors.grey.shade100,
           borderRadius: BorderRadius.circular(20),
-          child: Row(children: [SizedBox(width: 10), Icon(Icons.search, color: Colors.grey), SizedBox(width: 10), Text("Search...", style: TextStyle(color: Colors.grey, fontSize: 16),),],),
+          child: Row(children: [SizedBox(width: 10), Icon(Icons.search, color: Colors.blue), SizedBox(width: 10), Text("Search...", style: TextStyle(color: Colors.grey, fontSize: 16),),],),
         ),
       ),
     );
@@ -65,8 +65,8 @@ class SearchPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                TextButton(onPressed: () {setState(() {isMenSelected = true;});}, child: Text("Men", style: TextStyle(color: isMenSelected ? Colors.brown : Colors.grey, fontWeight: FontWeight.bold,),),),
-                TextButton(onPressed: () {setState(() {isMenSelected = false;});}, child: Text("Women", style: TextStyle(color: isMenSelected ? Colors.grey : Colors.brown, fontWeight: FontWeight.bold,),),),
+                TextButton(onPressed: () {setState(() {isMenSelected = true;});}, child: Text("Men", style: TextStyle(color: isMenSelected ? Colors.blue : Colors.grey, fontWeight: FontWeight.bold,),),),
+                TextButton(onPressed: () {setState(() {isMenSelected = false;});}, child: Text("Women", style: TextStyle(color: isMenSelected ? Colors.grey : Colors.blue, fontWeight: FontWeight.bold,),),),
               ],
             ),
             Expanded(child: isMenSelected ? _menCategories() : _womenCategories(),),
