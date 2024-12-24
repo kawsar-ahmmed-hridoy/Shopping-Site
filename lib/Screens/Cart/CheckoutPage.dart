@@ -14,7 +14,8 @@ class _CheckoutPageState extends State<CheckoutPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Checkout"), backgroundColor: Colors.white,),
+      backgroundColor: Color(0xFFC9E6F0),
+      appBar: AppBar(title: Text("Checkout",style: TextStyle(color: Colors.cyanAccent)), backgroundColor: Color(0xFF213555)),
       body: Stepper(
         type: StepperType.horizontal,
         currentStep: _currentStep,
@@ -33,16 +34,24 @@ class _CheckoutPageState extends State<CheckoutPage> {
               children: [
                 Text("Product Details", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 SizedBox(height: 20),
-                ListTile(
-                  leading: Image.network(
-                    "assets/products/tshirt.png",
-                    width: 50,
-                    height: 50,
-                    fit: BoxFit.cover,
+                Card(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ListTile(
+                      leading: ClipRRect(
+                        borderRadius: BorderRadius.circular(8.0),
+                        child: Image.network(
+                          "assets/products/tshirt.png",
+                          width: 50,
+                          height: 50,
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      title: Text("Men's t-shirt", style: TextStyle(fontWeight: FontWeight.bold)),
+                      subtitle: Text("Size: M"),
+                      trailing: Text("\$123", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black)),
+                    ),
                   ),
-                  title: Text("Men\'s t-shirt"),
-                  subtitle: Text("Size: M"),
-                  trailing: Text("\$123"),
                 ),
                 Divider(),
                 SizedBox(height: 20),
@@ -52,14 +61,14 @@ class _CheckoutPageState extends State<CheckoutPage> {
                   child: ListTile(
                     title: Text(_address),
                     trailing: IconButton(
-                      icon: Icon(Icons.edit),
+                      icon: Icon(Icons.edit,color: Colors.indigo,),
                       onPressed: () => _editAddress(context),
                     ),
                   ),
                 ),
                 SizedBox(height: 10),
                 Text("Total Price: \$$_totalPrice",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Colors.red)),
               ],
             ),
             isActive: _currentStep >= 0,
@@ -118,11 +127,21 @@ class _CheckoutPageState extends State<CheckoutPage> {
                 ListTile(
                   leading: Icon(Icons.credit_card),
                   title: Text("Credit Card"),
+                  trailing: Icon(Icons.radio_button_off),
+                ),
+                ListTile(
+                  leading: Icon(Icons.money),
+                  title: Text("Cash on Delivery"),
                   trailing: Icon(Icons.check_circle, color: Colors.green),
                 ),
                 ListTile(
-                  leading: Icon(Icons.payment),
-                  title: Text("Cash on Delivery"),
+                  leading: Icon(Icons.apartment),
+                  title: Text("Bank Account"),
+                  trailing: Icon(Icons.radio_button_off),
+                ),
+                ListTile(
+                  leading: Icon(Icons.mobile_friendly),
+                  title: Text("Mobile Banking"),
                   trailing: Icon(Icons.radio_button_off),
                 ),
               ],

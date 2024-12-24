@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class OrdersPage extends StatelessWidget {
   final List<Map<String, dynamic>> pendingOrders = [
     {
-      "title": "Women\'s Hoodie",
+      "title": "Panjabi",
       "price": 123,
       "status": "Pending",
       "orderDate": "Nov 16, 2024",
@@ -24,10 +24,13 @@ class OrdersPage extends StatelessWidget {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
+        backgroundColor: Color(0xFFC9E6F0),
         appBar: AppBar(
-          title: Text("My Orders"),
-          backgroundColor: Colors.brown,
+          title: Text("My Orders",style: TextStyle(color: Colors.cyanAccent),),
+          backgroundColor: Color(0xFF213555),
           bottom: TabBar(
+            labelColor: Colors.blue,
+            unselectedLabelColor: Colors.grey,
             tabs: [
               Tab(text: "Pending Orders"),
               Tab(text: "Past Orders"),

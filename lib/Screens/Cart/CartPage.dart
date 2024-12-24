@@ -13,7 +13,7 @@ class CartPage extends StatefulWidget {
 
 class _CartPageState extends State<CartPage> {
   final List<Map<String, dynamic>> cartItems = [
-    {"title": "Women\'s Hoodie", "price": 123, "image": "assets/products/scarts.png", "quantity": 1, "color": "Red", "size": "M",},
+    {"title": "Panjabi", "price": 123, "image": "assets/products/panjabi.png", "quantity": 1, "color": "Red", "size": "M",},
     {"title": "T-shirt", "price": 109, "image": "assets/products/tshirt.png", "quantity": 1, "color": "Blue", "size": "L",},
   ];
 
@@ -32,7 +32,8 @@ class _CartPageState extends State<CartPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Cart"), backgroundColor: Colors.white,),
+      backgroundColor: Color(0xFFC9E6F0),
+      appBar: AppBar(title: Text("Cart",style: TextStyle(color: Colors.cyanAccent)), backgroundColor: Color(0xFF213555),),
       body: Column(
         children: [
           Expanded(
@@ -99,15 +100,15 @@ class _CartPageState extends State<CartPage> {
           Container(
             margin: EdgeInsets.only(bottom: 5),
             padding: EdgeInsets.all(16.0),
-            decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.vertical(top: Radius.circular(16)), boxShadow: [BoxShadow(color: Colors.grey),],),
+            decoration: BoxDecoration(color: Colors.white , borderRadius: BorderRadius.vertical(top: Radius.circular(16)),),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Total:", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
-                    Text("\$${cartItems.fold<int>(0, (sum, item) => sum + ((item["price"] as int) * (item["quantity"] as int)))}", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                    Text("Total:", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,color: Colors.black)),
+                    Text("\$${cartItems.fold<int>(0, (sum, item) => sum + ((item["price"] as int) * (item["quantity"] as int)))}", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,color: Colors.red),),
                   ],
                 ),
                 SizedBox(height: 20),
@@ -116,7 +117,7 @@ class _CartPageState extends State<CartPage> {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => CheckoutPage()),);
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.brown,
+                    backgroundColor: Colors.blue,
                     padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                   ),
                   child: Text("Proceed to Checkout", style: TextStyle(fontSize: 16, color: Colors.white,)),
@@ -126,7 +127,7 @@ class _CartPageState extends State<CartPage> {
                   onPressed: () {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => OrdersPage()),);
                   },
-                  child: Text("View Orders", style: TextStyle(fontSize: 16, color: Colors.brown)),
+                  child: Text("View Orders", style: TextStyle(fontSize: 16, color: Colors.blue)),
                 ),
               ],
             ),
@@ -149,11 +150,11 @@ class _CartPageState extends State<CartPage> {
           }
         },
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
-          BottomNavigationBarItem(icon: Icon(Icons.shopping_cart), label: "Cart"),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: "Saved"),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: "Profile"),
+          BottomNavigationBarItem(backgroundColor: Color(0xFF213555), icon: Icon(Icons.home), label: "Home"),
+          BottomNavigationBarItem(backgroundColor: Color(0xFF213555), icon: Icon(Icons.search), label: "Search"),
+          BottomNavigationBarItem(backgroundColor: Color(0xFF213555), icon: Icon(Icons.shopping_cart), label: "Cart"),
+          BottomNavigationBarItem(backgroundColor: Color(0xFF213555), icon: Icon(Icons.favorite), label: "Saved"),
+          BottomNavigationBarItem(backgroundColor: Color(0xFF213555), icon: Icon(Icons.person), label: "Profile"),
         ],
       ),
     );
