@@ -43,7 +43,7 @@ class _NewTrendPageState extends State<NewTrendPage> {
       appBar: AppBar(backgroundColor: Color(0xFF213555), title: Text("New Trend", style: TextStyle(color: Colors.cyanAccent),),
         iconTheme: IconThemeData(color: Colors.black),
         actions: [
-          IconButton(icon: Icon(Icons.shopping_cart), onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => CartPage()));},),
+          IconButton(icon: Icon(Icons.shopping_cart,color: Colors.white,), onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => CartPage()));},),
         ],
       ),
       body: Column(
@@ -98,7 +98,7 @@ class _NewTrendPageState extends State<NewTrendPage> {
           Expanded(
             child: GridView.builder(
               padding: const EdgeInsets.all(10.0),
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, crossAxisSpacing: 10, mainAxisSpacing: 10, childAspectRatio: 1.5,),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2, crossAxisSpacing: 10, mainAxisSpacing: 10, childAspectRatio: 1.2),
               itemCount: filteredProducts.length,
               itemBuilder: (context, index) {
                 final product = filteredProducts[index];
@@ -107,7 +107,7 @@ class _NewTrendPageState extends State<NewTrendPage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Expanded(child: ClipRRect(borderRadius: BorderRadius.vertical(top: Radius.circular(8.0),), child: Image.asset(product["image"], fit: BoxFit.contain, width: 100,),),),
+                      Expanded(child: Align(alignment: Alignment.centerRight, child: Image.asset(product["image"], fit: BoxFit.contain, width: 100))),
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: Column(

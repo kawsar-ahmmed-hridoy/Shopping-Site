@@ -63,7 +63,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 SizedBox(
                   width: double.infinity,
                   child: ElevatedButton(
-                    onPressed: () {if (_formKey.currentState!.validate() && termsAccepted) {print("Successfully signed up!");} else if (!termsAccepted) {setState(() {});}},
+                    onPressed: () {if (_formKey.currentState!.validate() && termsAccepted) {ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Sign Up successful. Now you can Sign In here!")),);Navigator.pop(context);} else if (!termsAccepted) {setState(() {});}},
                     style: ElevatedButton.styleFrom(backgroundColor: Colors.blue, padding: EdgeInsets.symmetric(vertical: 16),),
                     child: Text("Sign up", style: TextStyle(fontSize: 18, color: Colors.white),),
                   ),

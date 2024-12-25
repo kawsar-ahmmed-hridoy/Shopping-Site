@@ -154,7 +154,7 @@ class ProductDetailsPage extends StatelessWidget {
         padding: const EdgeInsets.all(16.0),
         child: ElevatedButton(
           onPressed: () {
-            /* pore dekhbo */
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Product added to Cart!")),);Navigator.pop(context);
           },
           style: ElevatedButton.styleFrom(
             backgroundColor: Colors.blue,

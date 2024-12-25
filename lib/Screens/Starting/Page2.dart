@@ -14,7 +14,7 @@ class Page2 extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [SizedBox(height: 50), Image.asset("assets/Initial/find.png", height: 100), SizedBox(height: 20),
+          children: [SizedBox(height: 50), Image.asset("assets/Initial/find.png", height: 200), SizedBox(height: 20),
             Text("Find products easily", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),), Text("Take a photo to find similar products."), SizedBox(height: 50),
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [_buildDot(false), _buildDot(true), _buildDot(false),],),
           ],

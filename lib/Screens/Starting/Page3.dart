@@ -10,7 +10,7 @@ class Page3 extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 50), Image.asset("assets/Initial/payment.png", height: 100), SizedBox(height: 20),
+            SizedBox(height: 50), Image.asset("assets/Initial/payment.png", height: 200), SizedBox(height: 20),
             Text("Payment is easy", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
             Text("Secure and fast payment options available."), SizedBox(height: 50),
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [_buildDot(false), _buildDot(false), _buildDot(true),],),

@@ -6,7 +6,7 @@ class OrdersPage extends StatelessWidget {
       "title": "Panjabi",
       "price": 123,
       "status": "Pending",
-      "orderDate": "Nov 16, 2024",
+      "orderDate": "Nov 20, 2024",
     },
   ];
 
@@ -15,7 +15,7 @@ class OrdersPage extends StatelessWidget {
       "title": "Jeans",
       "price": 215,
       "status": "Delivered",
-      "orderDate": "Nov 20, 2024",
+      "orderDate": "Nov 10, 2024",
     },
   ];
 

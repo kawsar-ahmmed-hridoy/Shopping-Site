@@ -40,14 +40,9 @@ class _CheckoutPageState extends State<CheckoutPage> {
                     child: ListTile(
                       leading: ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
-                        child: Image.network(
-                          "assets/products/tshirt.png",
-                          width: 50,
-                          height: 50,
-                          fit: BoxFit.cover,
-                        ),
+                        child: Image.asset("assets/products/panjabi.png", height: 50,width: 50,fit: BoxFit.cover)
                       ),
-                      title: Text("Men's t-shirt", style: TextStyle(fontWeight: FontWeight.bold)),
+                      title: Text("Panjabi", style: TextStyle(fontWeight: FontWeight.bold)),
                       subtitle: Text("Size: M"),
                       trailing: Text("\$123", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black)),
                     ),
@@ -89,7 +84,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                     });
                   },
                   title: Text("Free Standard Shipping"),
-                  subtitle: Text("Delivered by Monday, June 8"),
+                  subtitle: Text("Delivered by Monday, November 28"),
                 ),
                 RadioListTile(
                   value: "Express Shipping",
@@ -100,7 +95,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                     });
                   },
                   title: Text("\$10.00 Express Shipping"),
-                  subtitle: Text("Delivered by Wednesday, June 3"),
+                  subtitle: Text("Delivered by Wednesday, November 23"),
                 ),
                 RadioListTile(
                   value: "Premium Shipping",
@@ -111,7 +106,7 @@ class _CheckoutPageState extends State<CheckoutPage> {
                     });
                   },
                   title: Text("\$19.99 Premium Shipping"),
-                  subtitle: Text("Delivered by Tuesday, June 2"),
+                  subtitle: Text("Delivered by Tuesday, November 22"),
                 ),
               ],
             ),
@@ -125,17 +120,17 @@ class _CheckoutPageState extends State<CheckoutPage> {
                 Text("Payment Method", style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
                 SizedBox(height: 10),
                 ListTile(
-                  leading: Icon(Icons.credit_card),
+                  leading: Icon(Icons.credit_card,color: Colors.blue),
                   title: Text("Credit Card"),
                   trailing: Icon(Icons.radio_button_off),
                 ),
                 ListTile(
-                  leading: Icon(Icons.money),
+                  leading: Icon(Icons.money,color: Colors.red),
                   title: Text("Cash on Delivery"),
                   trailing: Icon(Icons.check_circle, color: Colors.green),
                 ),
                 ListTile(
-                  leading: Icon(Icons.apartment),
+                  leading: Icon(Icons.apartment,color: Colors.brown),
                   title: Text("Bank Account"),
                   trailing: Icon(Icons.radio_button_off),
                 ),
