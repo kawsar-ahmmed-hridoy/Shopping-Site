@@ -10,14 +10,14 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFC9E6F0),
+      backgroundColor: Color(0xFFF1FBFF),
       appBar: AppBar(
         backgroundColor: Color(0xFF213555),
         elevation: 1,
         title: Text("Account", style: TextStyle(color: Colors.cyanAccent)),
         actions: [
           IconButton(
-            icon: Icon(Icons.settings, color: Colors.black),
+            icon: Icon(Icons.settings, color: Colors.white),
             onPressed: () {
               /* Future Implementation */
             },

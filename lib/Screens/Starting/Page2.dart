@@ -6,6 +6,7 @@ class Page2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         backgroundColor: Colors.transparent, elevation: 0,
         actions: [TextButton(onPressed: () {Navigator.push(context, MaterialPageRoute(builder: (context) => SigninScreen()),);}, child: Text("Skip", style: TextStyle(color: Colors.black, fontSize: 16,),),),],
@@ -13,7 +14,7 @@ class Page2 extends StatelessWidget {
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [SizedBox(height: 50), Image.asset("assets/Initial/find_products.png", height: 100), SizedBox(height: 20),
+          children: [SizedBox(height: 50), Image.asset("assets/Initial/find.png", height: 100), SizedBox(height: 20),
             Text("Find products easily", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),), Text("Take a photo to find similar products."), SizedBox(height: 50),
             Row(mainAxisAlignment: MainAxisAlignment.center, children: [_buildDot(false), _buildDot(true), _buildDot(false),],),
           ],
@@ -41,6 +42,6 @@ class Page2 extends StatelessWidget {
     );
   }
   Widget _buildDot(bool isActive) {
-    return Container(margin: EdgeInsets.symmetric(horizontal: 5), width: 12, height: 12, decoration: BoxDecoration(color: isActive ? Colors.brown : Colors.grey[300], shape: BoxShape.circle,),);
+    return Container(margin: EdgeInsets.symmetric(horizontal: 5), width: 12, height: 12, decoration: BoxDecoration(color: isActive ? Colors.blue : Colors.grey[300], shape: BoxShape.circle,),);
   }
 }
