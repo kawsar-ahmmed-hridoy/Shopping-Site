@@ -4,7 +4,7 @@ Today I am very excited to share my very first Flutter-based project An online s
 The app starts with some interactive starting pages to engage users. New users can 'sign up' by filling in their details. Returning users can 'sign in' using Google, Facebook, or other social accounts.
 We also have a 'forgot password option' for easy recovery.
 
-# The 'Home page' shows:  
+## The 'Home page' shows:  
 - New Trends,  
 - Popular items,  
 - Recently viewed products,  
@@ -14,16 +14,16 @@ We also have a 'forgot password option' for easy recovery.
   
 It also contains Product details page.
 
-# Users can search for products on the 'Search page', with options for both 'men and women'.
+## Users can search for products on the 'Search page', with options for both 'men and women'.
 
-# In the 'Cart', users can:  
+## In the 'Cart', users can:  
 - See their selected items, can increase quantity and delete product from cart.
 - Proceed to the 'checkout page', and  
 - View their orders with delivery dates.
 
-# The app also has a 'Saved products section' where users can add items to their favorites for future purchases.
+## The app also has a 'Saved products section' where users can add items to their favorites for future purchases.
 
-# On the 'Account page', users can:  
+## On the 'Account page', users can:  
 - Manage their 'personal information',  
 - Change 'settings',  
 - Save 'payment methods',  
